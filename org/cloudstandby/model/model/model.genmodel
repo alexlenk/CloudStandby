@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.cloudstandby.model/src" modelPluginID="org.cloudstandby.model"
+    modelName="Model" importerID="org.eclipse.emf.importer.ecore" copyrightFields="false">
+  <foreignModel>model.ecore</foreignModel>
+  <genPackages prefix="Model" disposableProviderFactory="true" ecorePackage="model.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//ProviderId">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ProviderId/AmazonEC2"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ProviderId/RackspaceCloudserversUS"/>
+    </genEnums>
+    <genClasses ecoreClass="model.ecore#//CloudStandby">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//CloudStandby/federatedElasticIaasExecutionEnvironment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//CloudStandby/installation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//CloudStandby/cloud"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//CloudStandby/federatedCloud"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//FederatedElasticIaasExecutionEnvironmentComponent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//FederatedElasticIaasExecutionEnvironmentComponent/federatedIaasExecutionEnvironment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//FederatedElasticIaasExecutionEnvironmentComponent/federatedVirtualMachine"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//FederatedElasticIaasExecutionEnvironmentComponent/federatedImage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FederatedElasticIaasExecutionEnvironmentComponent/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//FederatedElasticIaasExecutionEnvironmentComponent/requires"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//FederatedElasticIaasExecutionEnvironmentComponent/installationTask"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//FederatedIaasExecutionEnvironment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FederatedIaasExecutionEnvironment/hostname"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//FederatedIaasExecutionEnvironment/federatedIaasExecutionEnvironmentRuntime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//FederatedIaasExecutionEnvironment/backupJob"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//FederatedVirtualMachine">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//FederatedVirtualMachine/basicVirtualMachine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FederatedVirtualMachine/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="model.ecore#//InstallationTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//InstallationTask/name"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//BasicImage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//BasicImage/preparedImage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BasicImage/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BasicImage/login"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BasicImage/jsonDescription"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Image">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Image/name"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//FederatedImage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//FederatedImage/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FederatedImage/name"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//CloudDatacenter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//CloudDatacenter/basicImage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//CloudDatacenter/basicVirtualMachine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//CloudDatacenter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//CloudDatacenter/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//CloudDatacenter/providerId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//CloudDatacenter/publicKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//CloudDatacenter/privateKey"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//BasicVirtualMachine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BasicVirtualMachine/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BasicVirtualMachine/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BasicVirtualMachine/jsonDescription"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//FederatedElasticIaasExecutionEnvironment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//FederatedElasticIaasExecutionEnvironment/cloudDatacenter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//FederatedElasticIaasExecutionEnvironment/federatedElasticIaasExecutionEnvironmentComponent"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//InstallationRole">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//InstallationRole/installationTask"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="model.ecore#//InstallationScript"/>
+    <genClasses ecoreClass="model.ecore#//InstallationScriptBash">
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute model.ecore#//InstallationScriptBash/code"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="model.ecore#//InstallationScriptCollection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//InstallationScriptCollection/installationAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//InstallationScriptCollection/installationTemplateFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//InstallationScriptCollection/name"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//InstallationScriptCollectionBash">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//InstallationScriptCollectionBash/installationScriptBash"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//InstallationAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//InstallationAttribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//InstallationAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//FederatedCloud">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//FederatedCloud/federatedImage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//FederatedCloud/federatedVirtualMachine"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Cloud">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Cloud/cloudDatacenter"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Installation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Installation/installationScriptCollection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Installation/installationRole"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//InstallationTemplateFile">
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute model.ecore#//InstallationTemplateFile/content"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//FederatedIaasExecutionEnvironmentRuntime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FederatedIaasExecutionEnvironmentRuntime/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FederatedIaasExecutionEnvironmentRuntime/ip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FederatedIaasExecutionEnvironmentRuntime/modelIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FederatedIaasExecutionEnvironmentRuntime/dns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FederatedIaasExecutionEnvironmentRuntime/privateIp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FederatedIaasExecutionEnvironmentRuntime/privateDns"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//FederatedIaasExecutionEnvironmentRuntime/cloudDatacenter"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//PreparedImage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//PreparedImage/installationTask"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//InstallationTemplateRessource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//InstallationTemplateRessource/uri"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//InstallationTemplateDir">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//InstallationTemplateDir/InstallationTemplateRessource"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="model.ecore#//BackupJob">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BackupJob/period"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//BackupJobRsync">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BackupJobRsync/local"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BackupJobRsync/remote"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
